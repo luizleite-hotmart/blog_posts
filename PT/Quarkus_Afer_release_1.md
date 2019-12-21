@@ -1,0 +1,2 @@
+# Quarkus depois do 1.0
+A um tempo escrevi sobre o que era o quarkus nesse [post](https://dev.to/luizleite_/meu-primeiro-app-com-quarkus-3ocb). Pouco tempo depois lançaram a versão 1.0 que uma visão fria fala sobre sair do beta.
