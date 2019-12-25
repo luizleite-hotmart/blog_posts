@@ -11,4 +11,8 @@ Além disso podem ser selecionadas quais extensões o seu projeto, a maioria das
 ![Imagem mostra tela inicial do bootstrap que o Quarkus fornce isso pode ser encontrado em https://code.quarkus.io/ ](https://raw.githubusercontent.com/luizleite-hotmart/presentations/master/images/post-quakus-1.0/bootstrap.png
 )
 
+## Versão nova do IDEA
 
+## Documentação 
+
+## GraalVM
