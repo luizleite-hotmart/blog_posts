@@ -25,4 +25,8 @@ Infelizmente, não houve alterações nessa parte, pra mim não é um problema t
 A parte que eu não lembro, mas chamou muito minha atenção foi o blog deles. Acessando, você pode ver casos de empresas grandes que estão migrando de uma tecnologia para Quarkus. Um post que chamou muito minha atenção foi o da [Vodafone](https://quarkus.io/blog/vodafone-greece-replaces-spring-boot/), dentro você vai ver os motivos pelos quais optaram por quarkus e o que eles já tinham em spring boot.
 
 
-## GraalVM
+## Suporte GraalVM 19.3 delay
+
+Muito bem explicado [nesse post](https://quarkus.io/blog/why-graalvm-19-2/), eles optaram ficar na versão do GraalVM 19.2 para corrigir algumas issues foi bem maduro, admitirem os problemas que tiveram e, mostrar a forma de trabalho que eles querem aplicar para resolver esses casos. 
+
+## Plugin Intellij Quarkus by RedHat
