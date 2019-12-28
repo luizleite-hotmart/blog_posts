@@ -11,8 +11,18 @@ Além disso podem ser selecionadas quais extensões o seu projeto, a maioria das
 ![Imagem mostra tela inicial do bootstrap que o Quarkus fornce isso pode ser encontrado em https://code.quarkus.io/ ](https://raw.githubusercontent.com/luizleite-hotmart/presentations/master/images/post-quakus-1.0/bootstrap.png
 )
 
-## Versão nova do IDEA
+## Versão nova do IDEA 2019.3
+O Suporte do IntelliJ IDEA foi uma parte que ajuda pra quem não está acostumado com os quarkus, inicialmente ele vem em forma de TIPS, como mostrado na imagem abaixo
+![A imagem mostra as tips que são exibidas quando é utilizado algum codigo que não é recomendado para Quarkus](https://www.jetbrains.com/idea/whatsnew/2019-3/img/NewQuarkus.gif)
+[imagem retirada do site da JetBrains em https://www.jetbrains.com/idea/whatsnew/]
+
+Isso ainda é muito básico, perto do que existe para SpringBoot, mas já é um início e, uma forma de mostrar que eles estão prestando atenção nesses frameworks.
 
 ## Documentação 
+
+Infelizmente, não houve alterações nessa parte, pra mim não é um problema tão grande eu até gosto dos desenhos que eles fazem exemplificando.
+
+A parte que eu não lembro, mas chamou muito minha atenção foi o blog deles. Acessando, você pode ver casos de empresas grandes que estão migrando de uma tecnologia para Quarkus. Um post que chamou muito minha atenção foi o da [Vodafone](https://quarkus.io/blog/vodafone-greece-replaces-spring-boot/), dentro você vai ver os motivos pelos quais optaram por quarkus e o que eles já tinham em spring boot.
+
 
 ## GraalVM
