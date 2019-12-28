@@ -30,3 +30,6 @@ A parte que eu não lembro, mas chamou muito minha atenção foi o blog deles. A
 Muito bem explicado [nesse post](https://quarkus.io/blog/why-graalvm-19-2/), eles optaram ficar na versão do GraalVM 19.2 para corrigir algumas issues foi bem maduro, admitirem os problemas que tiveram e, mostrar a forma de trabalho que eles querem aplicar para resolver esses casos. 
 
 ## Plugin Intellij Quarkus by RedHat
+Isso talvez tenha sido um ponto altíssimo que eles fizeram, a própria RedHat lançou um plugin para Intellij Idea. O plugin permite:
+
+ - 
