@@ -37,3 +37,6 @@ Isso talvez tenha sido um ponto altíssimo que eles fizeram, a própria RedHat l
    - Tips para o código.
 
 O grande problema, pra mim do plugin, é que ele não possui uma busca pra facilitar a adição das extensões do quarkus.
+
+## Conclusão 
+O projeto evoluiu bastante e, se torna cada vez mais amigável para desenvolvedores. Pode parecer pouca coisa, mas tips e bootstrap, fazem aumentar muito a velocidade do seu projeto.
