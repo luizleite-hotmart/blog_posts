@@ -32,4 +32,8 @@ Muito bem explicado [nesse post](https://quarkus.io/blog/why-graalvm-19-2/), ele
 ## Plugin Intellij Quarkus by RedHat
 Isso talvez tenha sido um ponto altíssimo que eles fizeram, a própria RedHat lançou um plugin para Intellij Idea. O plugin permite:
 
- - 
+ - Criação do projeto com bootstrap dentro do Intellij.
+  - application.properties assistente para quarkus-ls (mais informações sobre Language Server [aqui](https://github.com/redhat-developer/quarkus-ls/tree/master/microprofile.ls)
+   - Tips para o código.
+
+O grande problema, pra mim do plugin, é que ele não possui uma busca pra facilitar a adição das extensões do quarkus.
