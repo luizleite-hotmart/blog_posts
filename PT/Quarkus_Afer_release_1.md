@@ -40,3 +40,8 @@ O grande problema, pra mim do plugin, é que ele não possui uma busca pra facil
 
 ## Conclusão 
 O projeto evoluiu bastante e, se torna cada vez mais amigável para desenvolvedores. Pode parecer pouca coisa, mas tips e bootstrap, fazem aumentar muito a velocidade do seu projeto.
+
+
+posted on :
+
+https://dev.to/luizleite_/quarkus-depois-do-1-0-42n3
