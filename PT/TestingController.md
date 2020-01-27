@@ -137,3 +137,25 @@ public class StockController {
 }
 ```
 
+Agora se rodar nosso código e acessar [localhost com 3 de parâmetro](http://localhost:8080/stocks?howMany=3) `http://localhost:8080/stocks?howMany=3`
+Vamos ter o resultado a seguir:
+
+```json
+[ 
+   { 
+      "date":"2020-01-27T08:34:42.925+0000",
+      "code":"STK0",
+      "value":0
+   },
+   { 
+      "date":"2020-01-27T08:34:42.926+0000",
+      "code":"STK1",
+      "value":1
+   },
+   { 
+      "date":"2020-01-27T08:34:42.926+0000",
+      "code":"STK2",
+      "value":2
+   }
+]
+```
