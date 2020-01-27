@@ -8,13 +8,20 @@ A maioria dos desenvolvedores, eu me incluo nessa parte, compartilha que nessa c
 Imagine que você possui o seguinte código VO:
 
 ```Java
-class 
+public class Stock {
+    private Date date;
+    private String code;
+    private BigDecimal value;
+}
 ```
 
 e em um belo dia alguém decide subir o código novo removendo um dos atributos, que já foram combinados em contrato com as outras aplicações e ele fica assim:
 
 ```java
-class
+public class Stock {
+    private Date date;
+    private BigDecimal value;
+}
 ```
 
 Claro que um teste de integração caso estejam bem executados pegariam antes de ir para produção, mas testes de integração custam caro e são lentos para executar. No conceito de Fail-Fast, em que quanto antes falhar menos danoso será para o seu projeto testes de contrato facilitariam muito para uma falha e correção antecipada.
