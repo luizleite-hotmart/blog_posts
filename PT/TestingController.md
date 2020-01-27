@@ -54,7 +54,7 @@ Se estiver tudo certo as dependências do seu Pom devem parecer com o código a 
     </dependencies>
 ```
 
-Agora vamos criar um VO simples de açõs que tem uma data, o código da ação e, o valor que ela tem. O meu código da classe ficou da seguinte forma.
+Agora vamos criar um VO de stocks que tem uma data, o código da ação e, o valor que ela tem. O meu código da classe ficou da seguinte forma.
 
 ```java
 import java.math.BigDecimal;
@@ -97,7 +97,7 @@ public class Stock {
 }
 ```
 
-Agora para ser um pouco mais dificil vamos criar um service que retorna um algumas ações, o meu ficou da seguinte forma
+Agora para ser um pouco mais difícil vamos criar um service que retorna um algumas ações, o meu ficou da seguinte forma:
 
 ```java
 import java.math.BigDecimal;
@@ -115,7 +115,7 @@ public class StockServices {
 }
 ```
 
-e agora pra finalizar a nossa camada Web que deve ter ficado algum código assim:
+e agora pra finalizar, nossa camada Web que deve ter ficado algum código assim:
 
 ```java
 import com.luizleiteoliveira.restControllerTest.service.StockServices;
