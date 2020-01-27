@@ -260,3 +260,8 @@ public class StockControllerTest {
     }
 }
 ```
+
+## Conclusão
+Para uma classe simples foi bem tranquilo utilizar os conceitos de testar uma parte separada. Foi muito satisfatório utilizar o mockMvc pois para o primeiro teste eu tinha me esquecido de passar o parâmetro `howMany` e o teste quebrou mostrando o que poderia acontecer. Agora pretendo fazer alguns testes mais robustos com filters no controller para ver o quão simples vai ser além de tentar aplicar um TDD nessa parte para ver se faz sentido.
+
+De qualquer forma acho que pelo custo que foi de implementar é muito válido utilizar testes assim, são leves e conseguem controlar a saída de dados como dados, tipo, httpStatus...
