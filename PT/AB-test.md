@@ -148,5 +148,7 @@ spring.datasource.url=jdbc:h2:file:/tmp/demo
 ```
 
 ### Conclusão 
-
+Existem diversas formas de aplicar teste AB para os cenários que eu preciso essa API vai funcionar muito bem. Mas existem 
+diversas libs e até API. Mas todas tem alguma limitação que não pode não funcionar bem para o caso que você precisa então 
+se quiser fazer alguma implementação em cima delas é bem simples.
  
