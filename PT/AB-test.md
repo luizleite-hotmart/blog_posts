@@ -97,4 +97,56 @@ e a parte dos testes caso o usuário está ou não dentro de uma feature podem f
         Assertions.assertTrue(userAbleUseFeature)
     }
 ```  
+
+E para finalizar a ultima coisa que precisamos é de criar o controller para a Feature.
+
+Essa foi a parte mais tranquila e ficou assim:
+
+```kotlin
+import com.luizleiteoliveira.abtest.FeatureRepository
+import com.luizleiteoliveira.abtest.entity.Feature
+import org.springframework.web.bind.annotation.*
+
+@RestController
+@RequestMapping("/features")
+class FeatureController(private val featureRepository: FeatureRepository) {
+
+    @GetMapping
+    fun getFeatures(): List<Feature> {
+        return featureRepository.findAll().toList()
+    }
+
+    @PostMapping
+    fun createFeature(@RequestBody feature: Feature): Long {
+        featureRepository.save(feature)
+        return feature.id
+    }
+
+    @PutMapping
+    fun updateFeature(@RequestBody feature: Feature): Long {
+        featureRepository.save(feature)
+        return feature.id
+    }
+
+    @GetMapping("/{featureId}")
+    fun checkUserAbleToUseFeature(@RequestParam("ucode") ucode: String, @PathVariable featureId: Long): Boolean {
+        val feature = featureRepository.findById(featureId).get()
+        return feature.userAbleUseFeature(ucode)
+    }
+}
+```
+
+E a configuração foi feita dentro do `application.properties`
+
+```properties
+spring.h2.console.enabled=true
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.datasource.url=jdbc:h2:file:/tmp/demo
+```
+
+### Conclusão 
+
  
