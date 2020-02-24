@@ -26,3 +26,10 @@ O comando acima vai criar um arquivo executável com o nome _new_command_name_ ,
 Agora o que o comando tem que executar depende do que vocês querem, a ultima instalação que fiz foi do Postman, nele um simples `snap install postman` já resolveu.
 Lembrando que o intenção não era criar comandos absurdos, e sim, não deixar nenhuma instalação de fora que eu já tinha, e esse problema resolveu.
 
+Quer acompanhar um pouco mais? Me siga nas plataformas.
+
+Twitter: [luizleite_](https://twitter.com/luizleite_)
+
+Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
+
+Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
