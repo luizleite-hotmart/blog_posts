@@ -28,6 +28,8 @@ Lembrando que o intenção não era criar comandos absurdos, e sim, não deixar 
 
 Quer acompanhar um pouco mais? Me siga nas plataformas.
 
+GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
+
 Twitter: [luizleite_](https://twitter.com/luizleite_)
 
 Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
