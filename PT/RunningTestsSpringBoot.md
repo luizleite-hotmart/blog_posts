@@ -260,6 +260,86 @@ Esse teste com `@SpringBootTest` não roda.
 ### Camada Web
 
 
+Para camada web a gente já fez um post [aqui](https://dev.to/luizleite_/como-fazer-testes-unitarios-em-controllers-de-um-app-spring-boot-1bbm)
+mas para o nosso caso de usuário vamos criar um controller para usuário, o mais simples seria o que retorna todos os usuários. Ficaria mais ou menos assim:
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+
+@Controller
+public class UserController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping(value = "/users")
+    @ResponseBody
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
+    }
+}
+``` 
+
+E um teste simples para resposta desse controller seria:
+```java
+
+import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.List;
+
+import static org.hamcrest.Matchers.containsString;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(controllers = UserController.class)
+class UserControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @Test
+    public void findAllUsers() throws Exception {
+        User user = new User("teste", 25, "DOC12346");
+        List<User> userList = List.of(user);
+        when(userRepository.findAll()).thenReturn(userList);
+        this.mockMvc.perform(get("/users"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("DOC12346")));
+    }
+
+}
+```
+
+Dentro desse teste utilizamos o MockMvc para fazer a chamada do controller, lembrando que isso é uma chamada "fake",
+e o `@MockBean` para executar um mock do nosso repository. Outra coisa que fizemos foi adicionar.
+
+## Conclusão 
+
+Além destes existem mais algumas configurações automaticas que você pode checar [aqui](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-test-auto-configuration.html),
+ mas sempre surgem novas ferramentas. Mas utilizar a abordagem correta para parte que você deseja testar, vai facilitar o uso
+ além de te dar velocidade, tanto na hora de rodar, quanto na hora do desenvolvimento
+ 
+ 
+ ## Gostou?
+ Se gostou aqui estão minhas redes sociais para acompanhar os novos posts. 
 
 
 Twitter: [luizleite_](https://twitter.com/luizleite_)
