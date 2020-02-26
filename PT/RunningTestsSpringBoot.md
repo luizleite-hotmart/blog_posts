@@ -28,6 +28,10 @@ Para o nosso setup inicial, vamos utilizar o mínimo e o pom vai precisar das se
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 ```  
 a exclusão do `junit-vintage-engine` é necessária para utilização do JUnit5 que utiliza o `junit-jupiter-engine` .
 O uso do H2 vai ser para testar a camada de dados.
@@ -39,9 +43,9 @@ Vamos criar uma classe bem simples pra fazer alguns testes, para isso vamos cria
 ```java
 public class User {
 
-    String name;
-    int age;
-    String document;
+    private String name;
+    private int age;
+    private String document;
 
     public User(String name, int age, String document) {
         this.name = name;
@@ -103,11 +107,154 @@ public class EntityTest {
 ```
 E deste jeito já tá rodando os nossos testes em 135ms enquanto se utilizarmos a notação `@SpringBootTest` roda em 459ms,
 parece pouco mas vamos lembrar que esse teste é o mais simples e nossa aplicação não tem nada configurado. Mesmo assim 
-a diferenção entre os dois testes já foi mais que o triplo.
-
- 
+a diferenção entre os dois testes já foi mais que o triplo, isso só pra validar um DTO. 
 
 ### Camada de dados
+
+Para testar nossa camada de dados vamos dar colocar em nossa classe `User` um atributo `@Entity` e o _ID_ que fica obrigatório:
+```java
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
+    private int age;
+    private String document;
+
+    public User(String name, int age, String document) {
+        this.name = name;
+        this.age = age;
+        this.document = document;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", document='" + document + '\'' +
+                '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+}
+
+```
+E o acesso vamos fazer via `JpaRepository` com apenas um método:
+
+```java
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    public User findUserByNameAndDocument(String name, String doc);
+}
+``` 
+
+Depois de ter criado essas classes já podemos criar alguns testes para essa parte. Alguns exemplos podem ser vistos a seguir:
+
+```java
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@ExtendWith(SpringExtension.class)
+@DataJpaTest
+public class UserRepositoryTests {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Test
+    public void insertUser() {
+        User user = new User("name", 11, "DOC12355");
+        userRepository.save(user);
+        Integer countUser = userRepository.findAll().size();
+        assertEquals(1, countUser);
+    }
+
+    @Test
+    public void checkUserSavedWithDocument() {
+        User user = new User("name", 11, "DOC12355");
+        userRepository.save(user);
+        Integer countUser = userRepository.findAll().size();
+        assertEquals(1, countUser);
+        User user1 = userRepository.findUserByNameAndDocument("name", "DOC12355");
+
+        assertNotNull(user1);
+        assertEquals(user, user1);
+    }
+
+    @Test
+    public void checkUserSavedWithDocumentPassingOtherDocumentShouldReturnNull() {
+        User user = new User("name", 11, "DOC12355");
+        userRepository.save(user);
+        Integer countUser = userRepository.findAll().size();
+        assertEquals(1, countUser);
+        User user1 = userRepository.findUserByNameAndDocument("name", "99999");
+
+        assertNull(user1);
+    }
+}
+
+```
+Utilizando `@DataJpaTest` ajuda a configurar algumas coisas automagicamente:
+
+ - Configuração de H2 in-memory
+ - Spring Data, Datasource
+ - Modo de logar o SQL ON
+
+o modo de logar o sql para o nosso caso fica assim:
+
+```mysql
+insert into user (age, document, name, id) values (?, ?, ?, ?)
+select user0_.id as id1_0_, user0_.age as age2_0_, user0_.document as document3_0_, user0_.name as name4_0_ from user user0_
+select user0_.id as id1_0_, user0_.age as age2_0_, user0_.document as document3_0_, user0_.name as name4_0_ from user user0_ where user0_.name=? and user0_.document=?
+```
+Esse teste com `@SpringBootTest` não roda 
 
 ### Camada Web
 
