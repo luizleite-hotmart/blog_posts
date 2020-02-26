@@ -34,6 +34,79 @@ O uso do H2 vai ser para testar a camada de dados.
 
 ### Camada de serviços e DTOs
 
+Vamos criar uma classe bem simples pra fazer alguns testes, para isso vamos criar um usuário:
+
+```java
+public class User {
+
+    String name;
+    int age;
+    String document;
+
+    public User(String name, int age, String document) {
+        this.name = name;
+        this.age = age;
+        this.document = document;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", document='" + document + '\'' +
+                '}';
+    }
+}
+```
+
+e o teste que vai executar sobre essa classe vai ser:
+
+```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+public class EntityTest {
+
+    @Test
+    public void UserTest() {
+        User user = new User("name", 12, "DOC12543");
+        assertEquals("name", user.name);
+        assertTrue(user.toString().contains("User{"));
+    }
+}
+```
+E deste jeito já tá rodando os nossos testes em 135ms enquanto se utilizarmos a notação `@SpringBootTest` roda em 459ms,
+parece pouco mas vamos lembrar que esse teste é o mais simples e nossa aplicação não tem nada configurado. Mesmo assim 
+a diferenção entre os dois testes já foi mais que o triplo.
+
+ 
+
 ### Camada de dados
 
 ### Camada Web
