@@ -254,7 +254,8 @@ insert into user (age, document, name, id) values (?, ?, ?, ?)
 select user0_.id as id1_0_, user0_.age as age2_0_, user0_.document as document3_0_, user0_.name as name4_0_ from user user0_
 select user0_.id as id1_0_, user0_.age as age2_0_, user0_.document as document3_0_, user0_.name as name4_0_ from user user0_ where user0_.name=? and user0_.document=?
 ```
-Esse teste com `@SpringBootTest` não roda 
+Esse teste com `@SpringBootTest` não roda.
+
 
 ### Camada Web
 
