@@ -103,3 +103,141 @@ Quando fazemos um get nesse endpoint recebemos um usuário aleatório no formato
 }
 ```
 
+Caso chamemos o mesmo endpoint mas dessa vez com um Query Param `results=N` ele traz N resultados pra gente.
+
+## Modelagem
+
+Os dados vão ser modelados da seguinte forma:
+
+ ### Names.java
+ A classe name é utilizada para criar  a parte `name` do usuário,  que tem os campos String `title`, `first`, `last`
+ 
+ ```java
+ package org.luizleiteoliveira.entity;
+ 
+ public class Names {
+ 
+     private String title;
+     private String first;
+     private String last;
+ 
+     public String getTitle() {
+         return title;
+     }
+ 
+     public void setTitle(String title) {
+         this.title = title;
+     }
+ 
+     public String getFirst() {
+         return first;
+     }
+ 
+     public void setFirst(String first) {
+         this.first = first;
+     }
+ 
+     public String getLast() {
+         return last;
+     }
+ 
+     public void setLast(String last) {
+         this.last = last;
+     }
+ }
+
+```  
+
+### User.java
+Para modelar o usuário a api vem com diversos campos, vamos utilizar além do objeto `name` , `email`, `gender`, 
+`phone`, `cell`, `nat`:
+
+```java
+package org.luizleiteoliveira.entity;
+
+public class User {
+
+    private String email;
+    private String gender;
+    private Names name;
+    private String phone;
+    private String cell;
+    private String nat;
+
+    public User() {}
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Names getName() {
+        return name;
+    }
+
+    public void setName(Names name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getCell() {
+        return cell;
+    }
+
+    public void setCell(String cell) {
+        this.cell = cell;
+    }
+
+    public String getNat() {
+        return nat;
+    }
+
+    public void setNat(String nat) {
+        this.nat = nat;
+    }
+}
+
+```   
+
+### Results.java
+Pra finalizar a classe que faz ficam todos os nossos resultados, pra nossa modelagem só vai conter uma lista de usuários.
+
+```java
+package org.luizleiteoliveira.entity;
+
+import java.util.List;
+
+public class Results {
+
+    private List<User> results;
+    public Results() {}
+
+    public List<User> getResults() {
+        return results;
+    }
+
+    public void setResults(List<User> results) {
+        this.results = results;
+    }
+}
+```
+
+
