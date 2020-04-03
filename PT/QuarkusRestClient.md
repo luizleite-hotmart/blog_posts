@@ -241,3 +241,6 @@ public class Results {
 ```
 
 
+### Conclusão 
+
+Eu fiquei bem feliz com o modo que foi implementado, achei extremamente simples e intuitivo. Usar as mesmas notações para registrar o controller você utilizar pra executar a chamada facilita muito.
