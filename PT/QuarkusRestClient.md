@@ -248,12 +248,12 @@ Eu fiquei bem feliz com o modo que foi implementado, achei extremamente simples 
 
 ### _Quer acompanhar um pouco mais? Me siga nas plataformas._
 
-GitHub: luizleite-hotmart
+GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
 
 Twitter: luizleite_
 
-Twitch: coffee_and_code
+Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
 
-Linkedin: luizleiteoliveira
+Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
 
-dev.to: luizleite_
+dev.to: [luizleite_](https://dev.to/luizleite_)
