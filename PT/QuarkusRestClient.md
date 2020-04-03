@@ -244,3 +244,16 @@ public class Results {
 ### Conclusão 
 
 Eu fiquei bem feliz com o modo que foi implementado, achei extremamente simples e intuitivo. Usar as mesmas notações para registrar o controller você utilizar pra executar a chamada facilita muito.
+
+
+### _Quer acompanhar um pouco mais? Me siga nas plataformas._
+
+GitHub: luizleite-hotmart
+
+Twitter: luizleite_
+
+Twitch: coffee_and_code
+
+Linkedin: luizleiteoliveira
+
+dev.to: luizleite_
