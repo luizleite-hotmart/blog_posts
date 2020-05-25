@@ -168,7 +168,7 @@ validação com elas.
 Com isso tudo não acho uma boa opção comparando com o que já tem em Spring Boot, para esse caso ainda não está maduro suficiente,
 mas é claro que não está muito longe e, é fácil de ver como chegariam nesse ponto.
 
- ## _Quer acompanhar um pouco mais? 
+ ## _Quer acompanhar um pouco mais?_ 
  Me siga nas plataformas._
     
     GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
