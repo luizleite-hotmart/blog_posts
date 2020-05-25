@@ -168,14 +168,15 @@ validação com elas.
 Com isso tudo não acho uma boa opção comparando com o que já tem em Spring Boot, para esse caso ainda não está maduro suficiente,
 mas é claro que não está muito longe e, é fácil de ver como chegariam nesse ponto.
 
- ## Gostou?
- Se gostou aqui estão minhas redes sociais para acompanhar os novos posts. 
-
-
-Twitter: [luizleite_](https://twitter.com/luizleite_)
-
-Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
-
-Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
-
-dev.to: [luizleite_](https://dev.to/luizleite_)        
+ ## _Quer acompanhar um pouco mais? 
+ Me siga nas plataformas._
+    
+    GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
+    
+    Twitter: luizleite_
+    
+    Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
+    
+    Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
+    
+    dev.to: [luizleite_](https://dev.to/luizleite_)
