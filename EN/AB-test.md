@@ -1,41 +1,39 @@
-## Criando api de AB teste em 2 horas
+# Creating A/B (SPLIT) test API in 2 hours
 
-### O que são testes AB
+## What the hell are A/B or Split test
 
-Resumidamente testes AB são aqueles que, um usuário siga um fluxo, e sempre siga esse fluxo, e algum outro siga o fluxo em 
-uma mesma versão. Hoje em dia a gente usa testes AB para diversas coisas como: 
+A/B test are those tests that, one user has a path, and will always follow this path, 
+and some other user will be on another flow in the same version. Nowadays we could use these tests for many things like:
 
- - [x] Dividir fluxo de usuários (Ex: 10% irão assistir o botão na cor verde o resto de outra cor)
-        _Detalhe importante nesse caso um usuário 'X' sempre deve ir para o mesmo fluxo_
-        
- - [x] Rollout de features. Utilizado quando criar uma nova funcionalidade e quer ver como os usuários se comportam com ela,
- ou se vai ter algum problema de qualquer tipo, bug, performance, engajamento, na nova funcionalidade.
+
+ - [x] Split the users (10% will see the green button and rest another color)
  
- Mas nada disso vai gerar o resultado que você espera caso não tenha como coletar os dados, então é importante saber qual 
- usuário seguiu e qual não seguiu e ver o resultado de qual resultado. Para isso já tivemos algumas abordagens para coleção,
- a mais simples delas é a própria aplicação dispara um log e se usar Kibana pode criar um dashboard para ver os resultados,
- qual lado foi melhor.
+        _An important thing is, in this scenario, if a user 'X' will always be on the same path_
+        
+ - [x] Rollout features. When you will release a new feature, you can make a rollout,  progressively,
+  and if exists a bug or performance issue we can improve that part before all users have the same problem.
+ 
+Those things are important but, more relevant is how we can collect data about those tests. 
+The simplest approach throws a log and gets this info on Kibana with a dashboard.
  
  Os testes AB são amplamente utilizados para ver qual alternativa vai ser melhor pra negócio, mas no caso de um bug, que 
  pode ser identificado em um rollout, ele pode representar uma redução nos custos operacionais para empresa.
  
  
- ### Tecnologias utilizadas
+ ## What we used
  
  - SpringBoot
- - H2 com configuração de arquivos
+ - H2 
  - Hibernate 
  - Spring Web
  - JPA
  
- Basicamente é isso que precisamos para ter acesso a tudo. Caso evolua um pouco um mecanismo de cache é bem importante, 
- outra coisa as vezes é um banco melhor mas não acho que é necessário pois o H2 consegue ir até para um s3 e a gente utilizar
- o de lá.
+For the first part, this is all we need. A good improvement is to add a cache, another
+ thing is to use a better database but with H2 you put this on AWS S3 and handle over there.
  
- ## O projeto 
+ ## The project 
  
- A única classe que a gente vai precisar persistir  é a `Feature.kt` nela vai ter toda a lógica que precisamos no nosso caso 
- ela ficou assim 
+For persist, the only class needed is the `Feature.kt`, in this class will have all the algorithm.
  
  ```kotlin
 import javax.persistence.Entity
@@ -58,13 +56,10 @@ data class Feature(var name: String = "",
 }
 ```
 
-A função `.entity.Feature#userAbleUseFeature` faz a lógica de um usuário ficar dentro da feature ou não. O 777 é só uma
-constante do sistema para variar, ela não é necessária, mas eu acho bom não ter como multiplicador apenas o ID da feature.
-Além disto o método `.hashCode()` retorna um int para qualquer string que chegar.
+The method `.entity.Feature#userAbleUseFeature` the algorithm will make the user be on the new feature or not. 
+The number `777` is just a constant, is not completely necessary, but it's important to be a multiplying factor with the feature id.
 
-
-Os testes dessa parte ficaram em:  `com.luizleiteoliveira.abtest.entity.FeatureTest`
-e a parte dos testes caso o usuário está ou não dentro de uma feature podem ficar bem similares com  os seguintes:
+All tests will be in: `com.luizleiteoliveira.abtest.entity.FeatureTest`
 
 ```kotlin
     @Test
@@ -98,9 +93,7 @@ e a parte dos testes caso o usuário está ou não dentro de uma feature podem f
     }
 ```  
 
-E para finalizar a ultima coisa que precisamos é de criar o controller para a Feature.
-
-Essa foi a parte mais tranquila e ficou assim:
+To finish our project the last thing will be the controller from Feature.
 
 ```kotlin
 import com.luizleiteoliveira.abtest.FeatureRepository
@@ -136,7 +129,7 @@ class FeatureController(private val featureRepository: FeatureRepository) {
 }
 ```
 
-E a configuração foi feita dentro do `application.properties`
+The config will be on  `application.properties`
 
 ```properties
 spring.h2.console.enabled=true
@@ -147,10 +140,22 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.datasource.url=jdbc:h2:file:/tmp/demo
 ```
 
-### Conclusão 
-Existem diversas formas de aplicar teste AB para os cenários que eu preciso essa API vai funcionar muito bem. Mas existem 
-diversas libs e até API. Mas todas tem alguma limitação que não pode não funcionar bem para o caso que você precisa então 
-se quiser fazer alguma implementação em cima delas é bem simples.
+### Conclusion 
+There are many forms to apply split tests, for those we comment on beginning will work very well, 
+but there are many libs and API's to make this. All cases could have a specific thing that could not be the thing you need.
 
-O projeto está todo no GitHub e você pode ver nesse [link](https://github.com/luizleite-hotmart/ab-test)
+You can check this project on this [link](https://github.com/luizleite-hotmart/ab-test)
+
+ ## _Want to follow me?_ 
+ _You can get in contact me on this social media._
+    
+    GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
+    
+    Twitter: luizleite_
+    
+    Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
+    
+    Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
+    
+    dev.to: [luizleite_](https://dev.to/luizleite_)
  
