@@ -1,14 +1,12 @@
 # Creating A/B (SPLIT) test API in 2 hours
 
-## What the hell are A/B or Split test
+## What the hell is A/B or Split test
 
 A/B test are those tests that, one user has a path, and will always follow this path, 
 and some other user will be on another flow in the same version. Nowadays we could use these tests for many things like:
 
 
- - [x] Split the users (10% will see the green button and rest another color)
- 
-        _An important thing is, in this scenario, if a user 'X' will always be on the same path_
+ - [x] Split the users (10% will see the green button and rest another color)        _An important thing is, in this scenario, if a user 'X' will always be on the same path_
         
  - [x] Rollout features. When you will release a new feature, you can make a rollout,  progressively,
   and if exists a bug or performance issue we can improve that part before all users have the same problem.
@@ -19,8 +17,8 @@ The simplest approach throws a log and gets this info on Kibana with a dashboard
  Os testes AB são amplamente utilizados para ver qual alternativa vai ser melhor pra negócio, mas no caso de um bug, que 
  pode ser identificado em um rollout, ele pode representar uma redução nos custos operacionais para empresa.
  
- 
- ## What we used
+
+## What we used
  
  - SpringBoot
  - H2 
@@ -31,7 +29,7 @@ The simplest approach throws a log and gets this info on Kibana with a dashboard
 For the first part, this is all we need. A good improvement is to add a cache, another
  thing is to use a better database but with H2 you put this on AWS S3 and handle over there.
  
- ## The project 
+## The project 
  
 For persist, the only class needed is the `Feature.kt`, in this class will have all the algorithm.
  
@@ -140,13 +138,13 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.datasource.url=jdbc:h2:file:/tmp/demo
 ```
 
-### Conclusion 
+## Conclusion 
 There are many forms to apply split tests, for those we comment on beginning will work very well, 
 but there are many libs and API's to make this. All cases could have a specific thing that could not be the thing you need.
 
 You can check this project on this [link](https://github.com/luizleite-hotmart/ab-test)
 
- ## _Want to follow me?_ 
+## _Want to follow me?_ 
  _You can get in contact me on this social media._
     
     GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
