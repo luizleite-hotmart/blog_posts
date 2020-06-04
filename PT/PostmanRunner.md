@@ -56,7 +56,7 @@ validar se o que está em answer existe no body do response.
 
 Para esse teste fizemos os 3 primeiros resultados darem certo e o último ter um erro, como resultado ficamos com a seguinte resposta:
 
-![Result](https://lh3.googleusercontent.com/Ft5SGGPFEbCl7X1yyV-hw0Xw5iYqy0IdzqwYEVlzVCKtRBhdjQSUnl4HJ5yY3zG-fuaQjyqSMF_D9H2ueapn=w1920-h976-rw)
+![Result](https://drive.google.com/uc?id=1P-8g8AOTrdzHY4ZWK9teF7_6GT8qf5bz)
 
 ## Conclusão
 
