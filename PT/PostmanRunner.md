@@ -38,7 +38,7 @@ teste,luizleite
 O arquivo contém duas colunas, a primeira tem o nome `seed` que vai substituir o query param da nossa chamada `https://randomuser.me/api/?seed={{seed}}`
 O segundo vai substituir um teste simples que é implementado na seguinte parte:
 
-![Postman](https://lh5.googleusercontent.com/9UPjGsrRjWaBkGURwxJhRO1JaQyVXc-Hz-HF7lOLK14LUsP23MJnuQPihs1a_EAhKi77tZNYtuuXIv9uOoRk=w1920-h976)
+![Postman](https://drive.google.com/uc?id=1t_ONvm9dU-8bKWmXUrwGikzwZoiaUdsz)
 
 o código é:
 ```
@@ -52,7 +52,7 @@ pm.test("Body matches string", function () {
 a parte de `pm.variables.get("answer")` é capaz de pegar uma variavel que podemos passar. A única coisa que esse teste faz é 
 validar se o que está em answer existe no body do response.
 
-![Before running](https://lh4.googleusercontent.com/9ybNLrmOwnKATh-uU9csntmlP3UWsxFxAedZ8W3STkqZ5dlXiRLwDhogNK6gH2-jxgeIs6khtVUxlCzAZ_UA=w1920-h976)
+![Before running](https://drive.google.com/uc?id=1TNerzh-2_XVuu0Zj0PmmUL0S8Z_e3WET)
 
 Para esse teste fizemos os 3 primeiros resultados darem certo e o último ter um erro, como resultado ficamos com a seguinte resposta:
 
