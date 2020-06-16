@@ -68,8 +68,17 @@ futuros.
 É uma opção excelente para um cenário em que necessita de reprocessamento de um lote sendo que pode validar só os casos que deram sucesso.
 
 
+## _Quer acompanhar um pouco mais?_ 
+Me siga nas plataformas._
 
+GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
 
+Twitter: luizleite_
 
+Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
+
+Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
+
+dev.to: [luizleite_](https://dev.to/luizleite_)
 
  
