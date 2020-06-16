@@ -170,13 +170,13 @@ mas é claro que não está muito longe e, é fácil de ver como chegariam nesse
 
  ## _Quer acompanhar um pouco mais?_ 
  Me siga nas plataformas._
-    
-    GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
-    
-    Twitter: luizleite_
-    
-    Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
-    
-    Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
-    
-    dev.to: [luizleite_](https://dev.to/luizleite_)
+
+GitHub: [luizleite-hotmart](https://github.com/luizleite-hotmart)
+
+Twitter: luizleite_
+
+Twitch: [coffee_and_code](https://www.twitch.tv/coffee_and_code)
+
+Linkedin: [luizleiteoliveira](https://www.linkedin.com/in/luizleiteoliveira/)
+
+dev.to: [luizleite_](https://dev.to/luizleite_)
